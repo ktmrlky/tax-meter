@@ -7,6 +7,7 @@ import SalaryCalculatıon from "./pages/SalaryCalculatıon";
 import SeverenceNotice from "./pages/SeverenceNotice";
 import WageCalculation from "./pages/WageCalculation";
 import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,8 +16,9 @@ ReactDOM.render(
         <Route index element={<Home />} />
         <Route path="maas-hesaplama" element={<SalaryCalculatıon />} />
         <Route path="asgari-ucret" element={<WageCalculation />} />
-        <Route path="kidem-ihbar" element={<SeverenceNotice />} />
+        <Route path="kidem-ve-ihbar" element={<SeverenceNotice />} />
         <Route path="iletisim" element={<Contact />} />
+        <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
   </BrowserRouter>,

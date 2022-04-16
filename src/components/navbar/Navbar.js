@@ -1,24 +1,26 @@
 import {
   AppBar,
   Box,
-  Button,
-  Container,
   IconButton,
   MenuItem,
   Toolbar,
   Typography,
   Menu,
+  Container,
+  ToggleButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const pages = ["Maaş Hesaplama", "Asgari Ücret", "Kıdem ve İhbar"];
+const pages = ["MAAŞ HESAPLAMA", "ASGARİ ÜCRET", "KIDEM VE İHBAR"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const url = useLocation();
+  const [selected, setSelected] = useState(url.pathname);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -29,18 +31,24 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
-      <Container maxWidth="xl">
+    <AppBar position="static" elevation={0} sx={{ py: 1 }}>
+      <Container sx={{ mt: 1 }}>
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
-            tax-meter
-          </Typography>
-
+          <Link to="/" onClick={() => setSelected("/")}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                marginRight: 5,
+                color: "black",
+              }}
+            >
+              LOGO
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -67,11 +75,20 @@ const Navbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "block", md: "none", color: "black" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={`/${page
+                    .toLowerCase()
+                    .replace(/ /g, "-")
+                    .normalize("NFD")
+                    .replace(/\p{Diacritic}/gu, "")}`}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -81,33 +98,62 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              color: "black",
+            }}
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to="/maas-hesaplama">
-              <Button sx={{ my: 2, color: "black", display: "block" }}>
-                Maaş Hesaplama
-              </Button>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              marginLeft: 5,
+            }}
+          >
+            <Link to="/maas-hesaplama" className="navLink">
+              <ToggleButton
+                value="maas-hesaplama"
+                style={{ backgroundColor: "transparent" }}
+                selected={selected === "/maas-hesaplama"}
+                onChange={() => setSelected("/maas-hesaplama")}
+              >
+                MAAŞ HESAPLAMA
+              </ToggleButton>
             </Link>
-            <Link to="/asgari-ucret">
-              <Button sx={{ my: 2, color: "black", display: "block" }}>
-                Asgari Ücret
-              </Button>
+            <Link to="/asgari-ucret" className="navLink">
+              <ToggleButton
+                value="asgari-ucret"
+                style={{ backgroundColor: "transparent" }}
+                selected={selected === "/asgari-ucret"}
+                onChange={() => setSelected("/asgari-ucret")}
+              >
+                ASGARİ ÜCRET
+              </ToggleButton>
             </Link>
-            <Link to="/kidem-ihbar">
-              <Button sx={{ my: 2, color: "black", display: "block" }}>
-                Kıdem ve İhbar
-              </Button>
+            <Link to="/kidem-ve-ihbar" className="navLink">
+              <ToggleButton
+                value="kidem-ve-ihbar"
+                style={{ backgroundColor: "transparent" }}
+                selected={selected === "/kidem-ihbar"}
+                onChange={() => setSelected("/kidem-ihbar")}
+              >
+                KIDEM VE İHBAR
+              </ToggleButton>
             </Link>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
-            <Link to="/iletisim">
-              <Button sx={{ my: 2, color: "black", display: "block" }}>
-                İletişim
-              </Button>
+            <Link to="/iletisim" className="navLink">
+              <ToggleButton
+                value="iletisim"
+                style={{ backgroundColor: "transparent" }}
+                selected={selected === "/iletisim"}
+                onChange={() => setSelected("/iletisim")}
+              >
+                İLETİŞİM
+              </ToggleButton>
             </Link>
           </Box>
         </Toolbar>
