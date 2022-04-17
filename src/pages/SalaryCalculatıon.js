@@ -1,30 +1,42 @@
+import { Grid, Zoom } from "@mui/material";
 import React, { useState } from "react";
-import ChooseStep from "../components/salaryCalculation.js/ChooseStep";
-import ClientForms from "../components/salaryCalculation.js/ClientForms";
-import DataTable from "../components/salaryCalculation.js/DataTable";
+import LeftSideStepper from "../components/salaryCalculation.js/LeftSideStepper";
+import SalaryMainPage from "../components/salaryCalculation.js/SalaryMainPage";
 
 const SalaryCalculatıon = () => {
-  const [step, setStep] = useState(1);
+  const steps = [" Hesaplama Yönü", "Gerekli Bilgiler", "Maaş Hesaplama"];
+  const [step, setStep] = useState(0);
 
-  const handleNextStep = (e) => {
+  const handleStep = (e) => {
     setStep(e);
   };
 
-  const handlePrevStep = () => {
-    setStep(step - 1);
-  };
+  console.log(step);
 
-  switch (step) {
-    case 1:
-      return <ChooseStep nextStep={handleNextStep} />;
-    case 2:
-      return <ClientForms nextStep={handleNextStep} tip="Brüt" />;
-    case 3:
-      return <ClientForms nextStep={handleNextStep} tip="Net" />;
-    case 4:
-      return <DataTable prevStep={handlePrevStep} />;
-    default:
-  }
+  return (
+    <>
+      <Zoom in={true} style={{ transitionDelay: "160ms" }}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          style={
+            step === 2
+              ? { marginTop: "2rem" }
+              : { position: "absolute", top: "40vh", left: "-63vh" }
+          }
+        >
+          <LeftSideStepper
+            orientation={step === 2 ? "horizontal" : "vertical"}
+            steps={steps}
+            activeStep={step}
+            handleStep={handleStep}
+          />
+        </Grid>
+      </Zoom>
+      <SalaryMainPage step={step} handleNextStep={handleStep} />
+    </>
+  );
 };
 
 export default SalaryCalculatıon;

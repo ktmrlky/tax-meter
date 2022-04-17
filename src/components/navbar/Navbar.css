@@ -15,8 +15,7 @@ header {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(0, 0, 0);
-  opacity: 0.2;
+  background-color: #e3dbd9;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

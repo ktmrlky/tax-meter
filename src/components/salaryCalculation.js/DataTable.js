@@ -3,7 +3,7 @@ import React from "react";
 
 const DataTable = ({ prevStep }) => {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", marginTop: "2rem", marginBottom: "2rem" }}>
       <DataGrid
         hideFooter={true}
         showCellRightBorder

@@ -137,7 +137,7 @@ const ClientForms = ({ tip, nextStep }) => {
                 borderBottom: "5px solid #e3dbd9",
               }}
               variant="outlined"
-              onClick={() => nextStep(4)}
+              onClick={() => nextStep(2)}
             >
               <CardActionArea>
                 <CardContent>
@@ -160,7 +160,7 @@ const ClientForms = ({ tip, nextStep }) => {
                 borderBottom: "5px solid #89b4c4",
               }}
               variant="outlined"
-              onClick={() => nextStep(4)}
+              onClick={() => nextStep(2)}
             >
               <CardActionArea>
                 <CardContent>
