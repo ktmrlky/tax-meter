@@ -1,7 +1,7 @@
 import { Grid, Zoom } from "@mui/material";
 import React, { useState } from "react";
-import LeftSideStepper from "../components/salaryCalculation.js/LeftSideStepper";
-import SalaryMainPage from "../components/salaryCalculation.js/SalaryMainPage";
+import LeftSideStepper from "../components/salaryCalculation/LeftSideStepper";
+import SalaryMainPage from "../components/salaryCalculation/SalaryMainPage";
 
 const SalaryCalculatıon = () => {
   const steps = [" Hesaplama Yönü", "Gerekli Bilgiler", "Maaş Hesaplama"];

@@ -35,7 +35,11 @@ const ChooseStep = ({ nextStep, handleTip }) => {
         </Zoom>
         <Zoom in={true} style={{ transitionDelay: "180ms" }}>
           <Card
-            sx={{ maxWidth: 345, m: "1rem" }}
+            sx={{
+              maxWidth: 345,
+              m: "1rem",
+              borderLeft: "5px solid #e3dbd9",
+            }}
             raised
             onClick={() => handleClick("Brüt", 1)}
           >
@@ -54,7 +58,7 @@ const ChooseStep = ({ nextStep, handleTip }) => {
         </Zoom>
         <Zoom in={true} style={{ transitionDelay: "200ms" }}>
           <Card
-            sx={{ maxWidth: 345, m: "1rem" }}
+            sx={{ maxWidth: 345, m: "1rem", borderLeft: "5px solid #89b4c4" }}
             raised
             onClick={() => handleClick("Net", 1)}
           >
