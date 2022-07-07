@@ -46,7 +46,7 @@ const Navbar = () => {
                 color: "black",
               }}
             >
-              LOGO
+              HESAPLA.com
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
