@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
@@ -9,7 +9,9 @@ import WageCalculation from "./pages/WageCalculation";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
@@ -21,6 +23,5 @@ ReactDOM.render(
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
+  </BrowserRouter>
 );
