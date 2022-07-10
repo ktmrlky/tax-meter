@@ -16,6 +16,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
+        <Route path="tax-meter" element={<Home />} />
+        {/* tax-meter is the url path for github pages in prod can be removed */}
         <Route path="maas-hesaplama" element={<SalaryCalculatıon />} />
         <Route path="asgari-ucret" element={<WageCalculation />} />
         <Route path="kidem-ve-ihbar" element={<SeverenceNotice />} />
