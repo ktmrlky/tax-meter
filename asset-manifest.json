@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/tax-meter/static/css/main.9bf8ee58.css",
-    "main.js": "/tax-meter/static/js/main.a763da67.js",
+    "main.css": "/tax-meter/static/css/main.cfae3c57.css",
+    "main.js": "/tax-meter/static/js/main.fbaa9047.js",
+    "static/media/wage-salary.jpg": "/tax-meter/static/media/wage-salary.f62e6ff5eb4f72f0c423.jpg",
     "static/media/Mar-Business_11.jpg": "/tax-meter/static/media/Mar-Business_11.c52ec3790103fa63fd0a.jpg",
+    "static/media/severance-notice.jpg": "/tax-meter/static/media/severance-notice.0d792edb87d646a947ed.jpg",
     "index.html": "/tax-meter/index.html",
-    "main.9bf8ee58.css.map": "/tax-meter/static/css/main.9bf8ee58.css.map",
-    "main.a763da67.js.map": "/tax-meter/static/js/main.a763da67.js.map"
+    "main.cfae3c57.css.map": "/tax-meter/static/css/main.cfae3c57.css.map",
+    "main.fbaa9047.js.map": "/tax-meter/static/js/main.fbaa9047.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bf8ee58.css",
-    "static/js/main.a763da67.js"
+    "static/css/main.cfae3c57.css",
+    "static/js/main.fbaa9047.js"
   ]
 }
