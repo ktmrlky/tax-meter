@@ -93,18 +93,24 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
+          <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              color: "black",
             }}
           >
-            LOGO
-          </Typography>
+            <Link to="/" onClick={() => setSelected("/")}>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ color: "black" }}
+              >
+                HESAPLA
+              </Typography>
+            </Link>
+          </Box>
+
           <Box
             sx={{
               flexGrow: 1,

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const NoPage = () => {
+  useEffect(() => {
+    document.title = "Salary Calculator - 404";
+  }, []);
+
   return (
     <div className="text-center" style={{ height: "80vh", overflow: "auto" }}>
       <div className="mt-5">

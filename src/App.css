@@ -4,11 +4,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
   color: #fff;
+}
+
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  scroll-snap-align: end;
 }
 
 .home-sections {

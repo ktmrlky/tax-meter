@@ -1,5 +1,5 @@
 import { Grid, Zoom } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LeftSideStepper from "../components/salaryCalculation/LeftSideStepper";
 import SalaryMainPage from "../components/salaryCalculation/SalaryMainPage";
 
@@ -11,7 +11,9 @@ const SalaryCalculatıon = () => {
     setStep(e);
   };
 
-  console.log(step);
+  useEffect(() => {
+    document.title = "Salary Calculator - Salary Calculation";
+  }, []);
 
   return (
     <>

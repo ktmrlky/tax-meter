@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="app container">
       <Navbar />
       <Container>
         <Outlet />
